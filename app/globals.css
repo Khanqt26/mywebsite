@@ -300,8 +300,9 @@ section {
 
 .mobile-menu a {
   font-family: var(--ff-head);
-  font-size: clamp(1.35rem, 6vw, 1.85rem);
-  font-weight: 800;
+  font-size: clamp(1rem, 4.5vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--muted);
   transition: color var(--transition);
 }
@@ -1224,7 +1225,7 @@ footer {
     display: flex;
   }
   .mobile-menu a {
-    font-size: clamp(1.2rem, 6.5vw, 1.7rem);
+    font-size: clamp(0.95rem, 4.8vw, 1.12rem);
   }
   .hero-name {
     font-size: clamp(3rem, 12vw, 5rem);
@@ -1266,7 +1267,7 @@ footer {
     gap: 16px;
   }
   .mobile-menu a {
-    font-size: clamp(1.1rem, 6vw, 1.35rem);
+    font-size: clamp(0.9rem, 4.6vw, 1.02rem);
   }
   .hero-btns {
     flex-direction: column;
