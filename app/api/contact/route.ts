@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json();
@@ -56,7 +58,7 @@ export async function POST(request: NextRequest) {
       const telegramError = await response.text();
       console.error('Telegram API error:', telegramError);
       return NextResponse.json(
-        { error: 'Failed to send message. Please try again.' },
+        { error: 'Telegram rejected the request. Verify TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, and that you started the bot chat.' },
         { status: 502 }
       );
     }
@@ -65,7 +67,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Contact API error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Contact service failed on server. Check Vercel Function logs for /api/contact.' },
       { status: 500 }
     );
   }
