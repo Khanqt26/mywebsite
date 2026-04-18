@@ -39,9 +39,9 @@
 **Timeline:** Days 1–3
 
 ### 1.1 Initialize the project
-- [ ] Run `npx create-next-app@latest portfolio --typescript --tailwind --eslint --app`
-- [ ] Open project in VS Code: `cd portfolio && code .`
-- [ ] Start dev server: `npm run dev` → confirm it loads at `http://localhost:3000`
+- [x] Run `npx create-next-app@latest portfolio --typescript --tailwind --eslint --app`
+- [x] Open project in VS Code: `cd portfolio && code .`
+- [x] Start dev server: `npm run dev` -> confirm it loads at `http://localhost:3000`
 - [x] Delete the default boilerplate in `app/page.tsx` — replace with a blank `<main>` tag
 
 ### 1.2 Folder structure
@@ -75,10 +75,10 @@
 - [x] Set base font, background color, and text color in `app/globals.css`
 
 ### 1.4 GitHub + Vercel deploy
-- [ ] Create a new GitHub repo and push the project: `git init && git add . && git commit -m "init" && git push`
-- [ ] Go to [vercel.com](https://vercel.com) → New Project → Import from GitHub
-- [ ] Confirm the project deploys successfully — you now have a live URL
-- [ ] Test that pushing to `main` triggers an automatic redeploy
+- [x] Create a new GitHub repo and push the project: `git init && git add . && git commit -m "init" && git push`
+- [x] Go to [vercel.com](https://vercel.com) -> New Project -> Import from GitHub
+- [x] Confirm the project deploys successfully - you now have a live URL
+- [x] Test that pushing to `main` triggers an automatic redeploy
 
 ---
 
@@ -174,7 +174,7 @@
     }
   ]
   ```
-- [ ] Add at least 3 projects with real or placeholder images in `/public/images/`
+- [x] Add at least 3 projects with real or placeholder images in `/public/images/`
 
 ### 3.2 Project card component
 - [x] Create `components/ui/ProjectCard.tsx`
@@ -267,16 +267,16 @@
 **Timeline:** Days 15–17
 
 ### 5.1 Create your Telegram bot
-- [ ] Open Telegram → search `@BotFather` → send `/newbot`
-- [ ] Choose a name and username for your bot
-- [ ] Copy the **Bot Token** BotFather gives you
-- [ ] Start a conversation with your new bot (send it any message)
-- [ ] Visit this URL in your browser to get your **Chat ID**:
+- [x] Open Telegram -> search `@BotFather` -> send `/newbot`
+- [x] Choose a name and username for your bot
+- [x] Copy the **Bot Token** BotFather gives you
+- [x] Start a conversation with your new bot (send it any message)
+- [x] Visit this URL in your browser to get your **Chat ID**:
   ```
   https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates
   ```
   Look for `"chat":{"id": 123456789}` in the response
-- [ ] Save both values — you'll need them in the next step
+- [x] Save both values - you'll need them in the next step
 
 ### 5.2 Add environment variables
 - [x] Add to `.env.local`:
@@ -363,7 +363,7 @@
   };
   ```
 - [ ] Create an OG image at `/public/images/og-image.jpg` (1200×630px — your name + title)
-- [ ] Add a favicon: place `favicon.ico` or `favicon.png` in `/app/` or `/public/`
+- [x] Add a favicon: place `favicon.ico` or `favicon.png` in `/app/` or `/public/`
 
 ### 6.4 Accessibility
 - [ ] All `<img>` tags have descriptive `alt` text
@@ -372,7 +372,7 @@
 - [ ] Confirm text contrast passes (use [webaim.org/resources/contrastchecker](https://webaim.org/resources/contrastchecker))
 
 ### 6.5 Final checks before launch
-- [ ] `.env.local` is in `.gitignore` — confirm it is NOT committed to GitHub
+- [x] `.env.local` is in `.gitignore` - confirm it is NOT committed to GitHub
 - [ ] All Vercel environment variables are set (Firebase + Telegram)
 - [ ] Test the contact form on the live Vercel URL — confirm Telegram message arrives
 - [ ] Test testimonial submission on live URL — confirm it saves and appears in real time
@@ -381,7 +381,7 @@
 
 ### 6.6 Go live
 - [ ] Push final changes to `main` branch
-- [ ] Confirm Vercel auto-deploys successfully
+- [x] Confirm Vercel auto-deploys successfully
 - [ ] Add your custom domain in Vercel → Settings → Domains (optional)
 - [ ] Share your portfolio! 🚀
 
