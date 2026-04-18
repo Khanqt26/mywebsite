@@ -3,8 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json();
+    const botToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -12,7 +13,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -21,34 +21,44 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Format the Telegram message
-    const telegramMessage = `
-📬 New Portfolio Message
+    if (!botToken || !chatId) {
+      console.error('Contact API configuration error: missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID');
+      return NextResponse.json(
+        { error: 'Contact service is not configured yet. Please try again later.' },
+        { status: 500 }
+      );
+    }
 
-👤 Name: ${name}
-📧 Email: ${email}
-📝 Subject: ${subject || 'No subject'}
-💬 Message: ${message}
+    const telegramMessage = [
+      'New Portfolio Message',
+      '',
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject || 'No subject'}`,
+      `Message: ${message}`,
+      '',
+      `Sent: ${new Date().toLocaleString()}`,
+    ].join('\n');
 
-⏰ Sent: ${new Date().toLocaleString()}
-    `.trim();
-
-    // Send to Telegram
-    const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const response = await fetch(telegramUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: process.env.TELEGRAM_CHAT_ID,
+        chat_id: chatId,
         text: telegramMessage,
-        parse_mode: 'HTML',
       }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to send Telegram message');
+      const telegramError = await response.text();
+      console.error('Telegram API error:', telegramError);
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again.' },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ success: true });
