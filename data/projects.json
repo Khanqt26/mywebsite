@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Digital School Clinic Monitoring System",
+    "description": "A full-stack web application for managing student health services with secure authentication, real-time data handling, and organized medical record management. Administrators can monitor patient vitals, manage records, and respond to alerts through a structured dashboard.",
+    "tags": ["PHP", "CSS", "SQL", "Hostinger"],
+    "img": "/images/clinic-system.png",
+    "url": ""
+  },
+  {
+    "id": "2",
+    "title": "Attendance Monitoring System",
+    "description": "A web-based attendance system developed for EE Days to track and record participant attendance efficiently. It allows authorized administrators to log student time-in and time-out while keeping records accurate and organized.",
+    "tags": ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    "img": "/images/attendance-system.png",
+    "url": ""
+  },
+  {
+    "id": "3",
+    "title": "Score Tally System",
+    "description": "A web-based score tally platform for EE Days that records results across academic, sports, and sociocultural events. The system lets administrators input rankings, automatically calculates team points, and shows real-time leaderboard standings.",
+    "tags": ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    "img": "/images/score-tally.png",
+    "url": ""
+  }
+]
