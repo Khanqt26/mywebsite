@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "education", label: "Education" },
+  { id: "achievements", label: "Achievements" },
   { id: "portfolio", label: "Work" },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
@@ -22,7 +23,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20);
 
       let current = "hero";
-      const sections = ["hero", "about", "education", "portfolio", "testimonials", "contact"];
+      const sections = ["hero", "about", "education", "achievements", "portfolio", "testimonials", "contact"];
       sections.forEach((id) => {
         const section = document.getElementById(id);
         if (section && window.scrollY >= section.offsetTop - 120) {
