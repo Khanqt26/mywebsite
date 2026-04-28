@@ -1724,8 +1724,30 @@ footer {
   .mobile-menu a {
     font-size: clamp(0.95rem, 4.8vw, 1.12rem);
   }
+  #hero {
+    min-height: auto;
+    padding: 120px 0 56px;
+    align-items: flex-start;
+  }
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
   .hero-name {
-    font-size: clamp(3rem, 12vw, 5rem);
+    font-size: clamp(2.7rem, 12vw, 4.3rem);
+    margin-bottom: 18px;
+  }
+  .hero-role {
+    font-size: clamp(1.15rem, 6vw, 1.7rem);
+    min-height: 1.8rem;
+    margin-bottom: 18px;
+  }
+  .hero-tagline {
+    font-size: 0.98rem;
+    margin-bottom: 32px;
+  }
+  .scroll-indicator {
+    display: none;
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -1790,6 +1812,31 @@ footer {
   .mobile-menu a {
     font-size: clamp(0.9rem, 4.6vw, 1.02rem);
   }
+  .container {
+    padding: 0 20px;
+  }
+  #hero {
+    padding: 104px 0 40px;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+  .hero-name {
+    font-size: clamp(2.5rem, 18vw, 3.7rem);
+    line-height: 0.92;
+    margin-bottom: 14px;
+  }
+  .hero-role {
+    font-size: clamp(1.05rem, 7vw, 1.4rem);
+    min-height: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .hero-tagline {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
   .home-announcement-card {
     padding: 24px;
   }
@@ -1805,10 +1852,13 @@ footer {
   }
   .hero-btns {
     flex-direction: column;
+    gap: 12px;
   }
   .btn-primary,
   .btn-outline {
     text-align: center;
+    width: 100%;
+    padding: 13px 20px;
   }
   .footer-inner {
     flex-direction: column;
