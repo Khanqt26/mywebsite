@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/achievements", label: "Achievements" },
   { href: "/projects", label: "Projects" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
