@@ -20,7 +20,7 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Khan Adjarani — Portfolio",
+  title: "Khan Adjarani - Portfolio",
   description: "Computer Engineering Student & Aspiring Full-Stack Developer building practical systems that solve real-world problems.",
 };
 

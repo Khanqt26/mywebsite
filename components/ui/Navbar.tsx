@@ -1,37 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 const NAV_ITEMS = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "education", label: "Education" },
-  { id: "achievements", label: "Achievements" },
-  { id: "portfolio", label: "Work" },
-  { id: "testimonials", label: "Testimonials" },
-  { id: "contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const updateScroll = () => {
       setScrolled(window.scrollY > 20);
-
-      let current = "hero";
-      const sections = ["hero", "about", "education", "achievements", "portfolio", "testimonials", "contact"];
-      sections.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section && window.scrollY >= section.offsetTop - 120) {
-          current = id;
-        }
-      });
-
-      setActiveSection(current);
     };
 
     updateScroll();
@@ -58,18 +47,23 @@ export default function Navbar() {
     <>
       <nav id="navbar" className={scrolled ? "scrolled" : ""}>
         <div className="nav-inner">
-          <a href="#hero" className="nav-logo" aria-label="Go to top">
+          <Link href="/" className="nav-logo" aria-label="Go to homepage" onClick={handleNavClick}>
             <Image className="nav-logo-mark" src="/images/logo-transparent.png" alt="Site logo" width={140} height={78} priority />
-          </a>
+          </Link>
           <div className="nav-links">
-            {NAV_ITEMS.filter((item) => item.id !== "hero" && item.id !== "contact").map((item) => (
-              <a key={item.id} href={`#${item.id}`} className={activeSection === item.id ? "active" : ""} onClick={handleNavClick}>
+            {NAV_ITEMS.filter((item) => item.href !== "/" && item.href !== "/contact").map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={pathname === item.href ? "active" : ""}
+                onClick={handleNavClick}
+              >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <a href="#contact" className={`nav-cta ${activeSection === "contact" ? "active" : ""}`} onClick={handleNavClick}>
+            <Link href="/contact" className={`nav-cta ${pathname === "/contact" ? "active" : ""}`} onClick={handleNavClick}>
               Contact
-            </a>
+            </Link>
           </div>
           <button type="button" className={mobileOpen ? "hamburger open" : "hamburger"} onClick={toggleMenu} aria-label="Toggle menu">
             <span />
@@ -81,9 +75,9 @@ export default function Navbar() {
 
       <div className={mobileOpen ? "mobile-menu open" : "mobile-menu"}>
         {NAV_ITEMS.map((item) => (
-          <a key={item.id} href={`#${item.id}`} onClick={handleNavClick}>
+          <Link key={item.href} href={item.href} onClick={handleNavClick} className={pathname === item.href ? "active" : ""}>
             {item.label}
-          </a>
+          </Link>
         ))}
       </div>
     </>

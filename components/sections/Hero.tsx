@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
@@ -34,13 +35,11 @@ export default function Hero() {
         } else {
           setDeleting(true);
         }
+      } else if (charIndex > 0) {
+        setCharIndex(charIndex - 1);
       } else {
-        if (charIndex > 0) {
-          setCharIndex(charIndex - 1);
-        } else {
-          setDeleting(false);
-          setTypeIndex((typeIndex + 1) % ROLES.length);
-        }
+        setDeleting(false);
+        setTypeIndex((typeIndex + 1) % ROLES.length);
       }
     }, delay);
 
@@ -90,7 +89,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            I build fast, beautiful web experiences that users love and clients remember — from landing pages to full-stack applications.
+            I build fast, beautiful web experiences that users love and clients remember, from landing pages to full-stack applications.
           </motion.p>
           <motion.div
             className="hero-btns"
@@ -98,12 +97,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0 }}
           >
-            <a href="#portfolio" className="btn-primary">
+            <Link href="/projects" className="btn-primary">
               View My Work
-            </a>
-            <a href="#contact" className="btn-outline">
+            </Link>
+            <Link href="/gallery" className="btn-outline">
+              View Gallery
+            </Link>
+            <Link href="/contact" className="btn-outline">
               Contact Me
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
