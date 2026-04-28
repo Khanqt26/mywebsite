@@ -10,15 +10,11 @@ export default function Achievements() {
           <div className="achievements-page-header">
             <div className="section-label">Achievements</div>
             <h1 className="section-title">Events Attended and Certificates</h1>
-            <p className="achievements-intro">
-              A dedicated place for your event moments, competition highlights, and certificates.
-            </p>
           </div>
 
           <div className="achievement-group">
             <div className="achievement-group-heading">
               <h2 className="achievement-group-title">Events Attended</h2>
-              <p className="achievement-group-text">Swipe through event photos and highlight the moments that matter most.</p>
             </div>
 
             <div className="event-showcase-list">
@@ -57,10 +53,6 @@ export default function Achievements() {
                         ))}
                       </div>
                     ) : null}
-
-                    <p className="event-gallery-note">
-                      Add your extra event photo by updating <code>data/achievements.ts</code> and replacing the second image path.
-                    </p>
                   </div>
                 </article>
               ))}
@@ -70,7 +62,6 @@ export default function Achievements() {
           <div className="achievement-group">
             <div className="achievement-group-heading">
               <h2 className="achievement-group-title">Certificates</h2>
-              <p className="achievement-group-text">Keep your certificates in their own section so visitors can browse them clearly.</p>
             </div>
 
             <div className="achievements-grid">
@@ -101,12 +92,6 @@ export default function Achievements() {
                           </span>
                         ))}
                       </div>
-                    ) : null}
-
-                    {certificate.href ? (
-                      <a href={certificate.href} className="project-link" target="_blank" rel="noopener noreferrer">
-                        View Certificate
-                      </a>
                     ) : null}
                   </div>
                 </article>
