@@ -100,8 +100,8 @@ export default function Hero() {
             <Link href="/projects" className="btn-primary">
               View My Work
             </Link>
-            <Link href="/gallery" className="btn-outline">
-              View Gallery
+            <Link href="/achievements" className="btn-outline">
+              Achievements
             </Link>
             <Link href="/contact" className="btn-outline">
               Contact Me

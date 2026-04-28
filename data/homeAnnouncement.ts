@@ -12,7 +12,7 @@ export const homeAnnouncement = {
     label: "Contact Me",
   },
   secondaryLink: {
-    href: "/gallery",
-    label: "View Gallery",
+    href: "/projects",
+    label: "View Projects",
   },
 };
