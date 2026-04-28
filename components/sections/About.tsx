@@ -4,27 +4,31 @@ import FadeInSection from "@/components/ui/FadeInSection";
 import Image from "next/image";
 
 const SKILLS = [
-  // Programming Languages
-  "Python",
-  "C++",
+  // Languages
+  "TypeScript",
   "JavaScript",
   "PHP",
-  // Frameworks / Libraries
+  "HTML",
+  "CSS",
+  "SQL",
+  // Frameworks & Libraries
+  "Next.js",
+  "React",
+  "Tailwind CSS",
+  "Framer Motion",
+  "Firebase / Firestore",
+  // Backend & Integrations
   "Node.js",
-  "Express.js",
-  "Bootstrap",
-  // Tools & Platforms
+  "Next.js API Routes",
+  "Telegram Bot API",
+  // Database, Hosting, Tools
+  "MySQL",
+  "Hostinger",
   "Git & GitHub",
   "VS Code",
-  "Arduino / Microcontrollers",
   // Design Tools
   "Figma",
   "Canva",
-  // Other Skills
-  "Hardware Integration",
-  "Database Management (MySQL)",
-  "Debugging & Troubleshooting",
-  "Basic Networking",
 ];
 
 export default function About() {
