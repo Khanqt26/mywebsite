@@ -21,7 +21,6 @@ export type AchievementCertificate = {
   description: string;
   image: string;
   imageAlt: string;
-  href?: string;
   highlights?: string[];
 };
 
@@ -39,8 +38,16 @@ export const achievementEvents: AchievementEvent[] = [
         alt: "National Innovation Day in Caraga recognition for Surigao del Norte State University, 3rd place in the Circular Economy Challenge student category.",
       },
       {
-        src: "/images/achievements/national-innovation-day-2026.jpg",
-        alt: "Additional National Innovation Day in Caraga event photo placeholder. Replace this with your second event photo when ready.",
+        src: "/images/achievements/national-innov.jpg",
+        alt: "Team photo at the 2026 National Innovation Day in Caraga Circular Economy Challenge event area.",
+      },
+      {
+        src: "/images/achievements/national-innov2.jpg",
+        alt: "Group photo of attendees during the 2026 National Innovation Day in Caraga event.",
+      },
+      {
+        src: "/images/achievements/national-innov3.jpg",
+        alt: "Working session photo from the 2026 National Innovation Day in Caraga Circular Economy Challenge.",
       },
     ],
     highlights: ["3rd Place", "Student Category", "Team Achievement"],
@@ -58,7 +65,6 @@ export const achievementCertificates: AchievementCertificate[] = [
     image: "/images/achievements/icpep-se-digital-olympiads-2026-certificate.png",
     imageAlt:
       "Certificate of Participation awarded to Khan L. Adjarani for Tech Photography in the ICpEP.SE National Digital Olympiads 2026.",
-    href: "/documents/achievements/icpep-se-digital-olympiads-2026-certificate.pdf",
     highlights: ["Tech Photography", "National Event", "ICpEP.SE"],
   },
 ];
